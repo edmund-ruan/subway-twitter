@@ -1,5 +1,5 @@
 import os
-from twilio.rest import Client
+import twilio
 
 def twilio_connect():
     account_sid = config.TWILIO_ACCOUNT_SID
