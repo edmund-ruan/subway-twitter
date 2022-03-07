@@ -1,5 +1,6 @@
 import os
-import twilio
+from twilio.rest import Client
+import config
 
 def twilio_connect():
     account_sid = config.TWILIO_ACCOUNT_SID
@@ -7,8 +8,9 @@ def twilio_connect():
     client = Client(account_sid, auth_token)
     return client
 
-#python
+
+# python
 def send_message(client):
     return client.messages.create(from_=config.TWILIO_PHONE_NUMBER,
-    to=config.CELL_PHONE_NUMBER,
-    body="You don't have to move your car tonight. Enjoy your night!")
+                                  to=config.CELL_PHONE_NUMBER,
+                                  body="You don't have to move your car tonight. Enjoy your night!")
